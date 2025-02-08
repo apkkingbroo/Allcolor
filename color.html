@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>55 Club Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            text-align: center;
+            background-color: #FFD700; /* Yellow Background */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to bottom, #e0ff00, #b0ff00); /* Yellow-Green background */
+            border: 3px solid black; /* Black border */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .app-icon:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to bottom, #ccff00, #99ff00);
+        }
+
+        .app-icon img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+        }
+
+        .app-icon span {
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .create-account-btn {
+            background: black; /* Black button */
+            color: white;
+            font-weight: bold;
+            padding: 2px 5px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-top: 5px;
+            transition: 0.3s;
+            font-size: 10px; /* Smaller button */
+        }
+
+        .create-account-btn:hover {
+            background: #333;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: yellow;
+            box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.5);
+            border: 2px solid yellow;
+        }
+
+        .result-box {
+            width: 250px;
+            height: 100px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            background: yellow;
+            color: red;
+            border: 2px solid yellow;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .btn {
+            background: yellow;
+            color: red;
+            font-weight: bold;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:disabled {
+            background: gray;
+            cursor: not-allowed;
+        }
+
+        .btn:hover {
+            background: red;
+            color: yellow;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: yellow;
+            color: red;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: black;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">COLOR PREDICTOR</div>
+
+    <div class="app-grid">
+        <div class="app-icon" onclick="openModal('55 Club')">
+            <img src="https://cdn-icons-png.flaticon.com/512/8610/8610297.png" alt="Predict">
+            <span>55 Club</span>
+            <a href="https://www.in979.in/#/register?invitationCode=83221522037" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+
+        <a href="https://www.in979.in/#/register?invitationCode=83221522037" target="_blank" class="app-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828466.png" alt="Register">
+            <span>Register</span>
+            <button class="create-account-btn">Create New Account</button>
+        </a>
+
+        <a href="https://t.me/apkmodderking" target="_blank" class="app-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            <span>Telegram</span>
+            <button class="create-account-btn">Create New Account</button>
+        </a>
+
+        <div class="app-icon" onclick="openModal('82 Lottery')">
+            <span>82 Lottery</span>
+            <a href="https://82lottery9.com/#/register?invitationCode=14244992621" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+
+        <div class="app-icon" onclick="openModal('Bdgwin')">
+            <span>Bdgwin</span>
+            <a href="https://bdgwin.cc/#/register?invitationCode=372171400520" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+
+        <div class="app-icon" onclick="openModal('Big Daddy')">
+            <span>Big Daddy</span>
+            <a href="https://bdg-4.com/#/register?invitationCode=b7yIo501953" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+
+        <div class="app-icon" onclick="openModal('91 Club')">
+            <span>91 Club</span>
+            <a href="https://91777.in/#/register?invitationCode=111355811375" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+
+        <div class="app-icon" onclick="openModal('Tiranga Game')">
+            <span>Tiranga Game</span>
+            <a href="https://www.tirangaclub.org/#/register?invitationCode=357811313367" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+
+        <div class="app-icon" onclick="openModal('Bharat Club')">
+            <span>Bharat Club</span>
+            <a href="https://bharatclub.bet/#/register?invitationCode=884382272723" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+
+        <div class="app-icon" onclick="openModal('Big Mumbai')">
+            <span>Big Mumbai</span>
+            <a href="https://bigmumbai7.com/#/register?invitationCode=231142312313" target="_blank">
+                <button class="create-account-btn">Create New Account</button>
+            </a>
+        </div>
+    </div>
+
+    <div id="predictionModal" class="modal">
+        <div class="modal-content">
+            <div class="close-btn" onclick="closeModal()">×</div>
+            <h2 id="modalTitle">Big or Small Prediction</h2>
+            <div class="result-box" id="resultBox">?</div>
+            <button id="predictBtn" onclick="predictResult()" class="btn">Predict</button>
+            <p id="cooldownText"></p>
+        </div>
+    </div>
+
+    <div class="footer">Telegram apkmodderking</div>
+
+    <script>
+        let cooldown = 0;
+
+        function openModal(appName) {
+            document.getElementById("modalTitle").innerText = appName;
+            document.getElementById("predictionModal").style.display = "flex";
+            document.getElementById("resultBox").style.opacity = "0";
+            document.getElementById("resultBox").style.transform = "scale(0.5)";
+        }
+
+        function closeModal() {
+            document.getElementById("predictionModal").style.display = "none";
+        }
+
+        function predictResult() {
+            if (cooldown > 0) return;
+
+            let resultBox = document.getElementById('resultBox');
+            let predictBtn = document.getElementById('predictBtn');
+            let cooldownText = document.getElementById('cooldownText');
+
+            let result = Math.random() < 0.5 ? "Big" : "Small";
+            resultBox.innerText = result;
+            resultBox.style.opacity = "1";
+            resultBox.style.transform = "scale(1)";
+
+            predictBtn.disabled = true;
+            cooldown = 60;
+            let timer = setInterval(() => {
+                cooldownText.innerText = `Wait ${cooldown} seconds`;
+                if (cooldown === 0) {
+                    clearInterval(timer);
+                    predictBtn.disabled = false;
+                    cooldownText.innerText = "";
+                }
+                cooldown--;
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
